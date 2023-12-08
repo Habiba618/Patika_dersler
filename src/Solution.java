@@ -1,35 +1,36 @@
-//public class Main {
-//    public static void main(String[] args) {
-//
-//        System.out.println("Hello world!");
-//    }
-//}
-
 import java.util.Scanner;
-
-interface AdvancedArithmetic {
-    int divisor_sum(int n);
-}
-
-class MyCalculator implements AdvancedArithmetic {
-    public int divisor_sum(int n) {
-        int sum = 0;
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) {
-                sum += i;
-            }
-        }
-        return sum;
-    }
-}
 
 public class Solution {
     public static void main(String[] args) {
-        MyCalculator my_calculator = new MyCalculator();
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        sc.close();
-        System.out.println("I implemented: AdvancedArithmetic");
-        System.out.println(my_calculator.divisor_sum(n));
+//        Not Ortalaması Hesaplayan Program
+//        Java ile Matematik, Fizik, Kimya, Türkçe, Tarih, Müzik derslerinin sınav puanlarını kullanıcıdan alan ve ortalamalarını hesaplayıp ekrana bastırılan programı yazın.
+//        Ödev
+//        Aynı program içerisinde koşullu ifadeler kullanılarak, eğer kullanıcının ortalaması 60'dan büyük ise ekrana "Sınıfı Geçti" , küçük ise "Sınıfta Kaldı" yazsın.
+//        Not : If ve Else kullanılmayacak...
+
+   int mat, fiz, kim, tur, tar, muz;
+   Scanner sc=new Scanner(System.in);
+        System.out.print("Matematik puanınızı giriniz: ");
+   mat = sc.nextInt();
+        System.out.print("Fizik puanınızı giriniz: ");
+        fiz = sc.nextInt();
+        System.out.print("Kimya puanınızı giriniz: ");
+        kim = sc.nextInt();
+        System.out.print("Turkce puanınızı giriniz: ");
+        tur = sc.nextInt();
+        System.out.print("Tarih puanınızı giriniz: ");
+        tar = sc.nextInt();
+        System.out.print("Müzik puanınızı giriniz: ");
+        muz = sc.nextInt();
+
+        int toplam = mat+fiz+kim+tur+tar+muz;
+        double ortalama = toplam/6;
+        System.out.println("Ortalaman: "+ortalama);
+
+        boolean ortalamBuyukMu = (ortalama > 60);
+        String durum = ortalamBuyukMu ? "Sınıfı Geçti" : "Sınıfta Kaldı";
+        System.out.println(durum);
     }
+
+
 }
